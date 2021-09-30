@@ -3,6 +3,6 @@ import menuReducr from './slices';
 
 export const store = configureStore({
   reducer: {
-    menu: carReducer,
+    menu: menuReducr,
   },
 });

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import { selectMenus } from './../features/car/slices';
+
 import { useSelector } from 'react-redux';
-import { selectCars } from './features/car/slices';
 export default function Header() {
   const [sidenavState, setSidenavState] = useState(false);
-  const navigation = useSelector(selectCars);
-  console.log(navigation);
+  //  const navigation = useSelector(selectMenus);
+  // console.log(navigation);
   window.onscroll = function () {
     var navbar = document.getElementById('navbar');
     if (window.pageYOffset > 0) {
