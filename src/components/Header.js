@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import { useSelector } from 'react-redux';
+import { selectCars } from './features/car/slices';
 export default function Header() {
   const [sidenavState, setSidenavState] = useState(false);
+  const navigation = useSelector(selectCars);
+  console.log(navigation);
   window.onscroll = function () {
     var navbar = document.getElementById('navbar');
     if (window.pageYOffset > 0) {
@@ -212,7 +216,9 @@ const SideNav = styled.div`
       }
     }
   }
+  transition: 0.2s;
   transform: ${(props) => (props.show ? 'translateX(0)' : 'translateX(100%)')}
+  
 `;
 const CloseButtonWrapper = styled.div`
   display:flex;
